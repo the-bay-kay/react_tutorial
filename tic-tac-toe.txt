@@ -4,10 +4,10 @@
 # Katie Rischpater - 005552114
 # 1/30/22
 
-Before I go into my notes, I have a hilarious fact I need to share -
+Before I go into my notes, I have a funny coincidence I need to share -
 before reading the spec for Assignment 3, I thought to myself "Oh wow,
 It's already week 4--I've been learning how to use GIT, maybe a good
-practice exercise would be to learn React & Node.js at the same time".
+practice exercise would be to learn React & Node.js at the same time!".
 And, in doing so, I accidentally did the Tic-Tac-Toe tutorial before the
 assignment!  The gitHub link is as follows:
 
@@ -17,5 +17,46 @@ I did some general commenting as notes on the source code itself --
 that being said, I'm going to go over my code a second time, and 
 leave some notes below as my thoughts...
 
+#==============================================#
+
 # Tic-Tac-Toe Notes #
 
+- JSX call syntax looks <like this\> - this (I believe) creates
+    an object that is rendered as follows, and gives it props to pass
+    down!  E.g....
+    - <Obj/Funct value={val} func={() => foo()} \>
+    - I believe this is what causes React to get a component & construct it!
+        e.g., class Game calls <Board />, ReactDOM calls <Game />, etc.
+        (Somehow, this interfaces with index.css, though I'll admit i
+        don't quite understand how...)
+
+- Changing the render of Square to this.props.value will desplay the
+  value of square's prop; later, this becomes a prop passed form board (game?)
+
+- onClick={funct()} - when passed to button clickign it calls, onClick(), which calls
+    does {funct()}
+        - I've seen elsewhere, a better syntax for setting this up might look like..
+            onClick( () => Funct() ) -- JS arrow funct notation looks cleaner import
+
+- My understanding of react is that, in general, everything except the primary 
+  methods should be immutable; while there is the option to create classes
+  (e.g., the class Square in the intro of the tutorial), it's much better
+  practice to store objects as immutables, and then use const functions to reassign
+  / recreate thos objects
+        - Example of this: Board's constructor initializes the square array and
+            maintains them
+
+- A good example of the above methodology of "handle it in the big class" ; while
+    I don't believe this project is set up to be the fully immutable
+    "Just make a new object each time", the handleClick() getting passed down
+    by renderSquare(i) is a good example of how inheretance(?) in props works
+        - Also!! Not shown in this specific tutorial, but you can unpack props,
+            making it more legible--for example...
+
+            function Square ({ value, onClick }) {
+                return (
+                    <button className="square", onClick={onClick}>
+                        {value} // rather than props.onClick, props.value 
+                    </button>
+                );
+            }

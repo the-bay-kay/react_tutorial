@@ -21,6 +21,9 @@ class Board extends React.Component {
 
     handleClick(i) {
 	const squares = this.state.squares.slice(); // slice creates a copy!
+	if(squares[i] || calculateWinner(squares)) { // if game is over or space is full
+		return;
+	}
 	// if (calculateWinner(squares)  || squares[i]) {
 	//     return;
 	// }
@@ -33,7 +36,7 @@ class Board extends React.Component {
     
     renderSquare(i) {
 	return <Square value={this.state.squares[i]}
-	        onClick={() => this.handleClick(i)}
+	        onClick={() => this.handleClick(i)} // square.onClick now calls handeClick
 	        />; // tells square to match squares array state! 
     }
 
@@ -107,7 +110,7 @@ function calculateWinner(squares) {
     return null;
 } // end calWinner
 
-
+// This is effectively main(); I think the ReactDom.render() is what starts the program
 // ========================================
 
 ReactDOM.render(
