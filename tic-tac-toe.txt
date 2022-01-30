@@ -1,0 +1,21 @@
+# Assignment 03
+# Tic-Tac-Toe React Tutorial Notes
+#
+# Katie Rischpater - 005552114
+# 1/30/22
+
+Before I go into my notes, I have a hilarious fact I need to share -
+before reading the spec for Assignment 3, I thought to myself "Oh wow,
+It's already week 4--I've been learning how to use GIT, maybe a good
+practice exercise would be to learn React & Node.js at the same time".
+And, in doing so, I accidentally did the Tic-Tac-Toe tutorial before the
+assignment!  The gitHub link is as follows:
+
+[ https://github.com/the-bay-kay/react_tutorial/commits/main ]
+
+I did some general commenting as notes on the source code itself --
+that being said, I'm going to go over my code a second time, and 
+leave some notes below as my thoughts...
+
+# Tic-Tac-Toe Notes #
+
